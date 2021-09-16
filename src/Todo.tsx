@@ -110,4 +110,4 @@ const Todo: React.FC<Props> = (props) => {
 
 Todo.whyDidYouRender = true
 
-export default Todo
+export default React.memo(Todo)

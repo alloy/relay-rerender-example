@@ -79,4 +79,4 @@ const TodoList: React.FC<Props> = (props) => {
 
 TodoList.whyDidYouRender = true;
 
-export default TodoList;
+export default React.memo(TodoList);
