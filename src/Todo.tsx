@@ -14,7 +14,7 @@ interface Props {
   todo: Todo_todo$key;
 }
 
-export default function Todo(props: Props) {
+const Todo: React.FC<Props> = (props) => {
   const user = useFragment(
     graphql`
       fragment Todo_user on User {
@@ -107,3 +107,7 @@ export default function Todo(props: Props) {
     </li>
   );
 }
+
+Todo.whyDidYouRender = true
+
+export default Todo

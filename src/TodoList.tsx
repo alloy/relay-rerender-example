@@ -9,7 +9,7 @@ interface Props {
   user: TodoList_user$key;
 }
 
-export default function TodoList(props: Props) {
+const TodoList: React.FC<Props> = (props) => {
   const user = useFragment(
     graphql`
       fragment TodoList_user on User {
@@ -76,3 +76,7 @@ export default function TodoList(props: Props) {
     </section>
   );
 }
+
+TodoList.whyDidYouRender = true;
+
+export default TodoList;

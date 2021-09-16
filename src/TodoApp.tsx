@@ -13,7 +13,7 @@ interface Props {
   initialQueryRef: PreloadedQuery<TodoAppQuery.TodoAppQuery>;
 }
 
-function TodoApp(props: Props) {
+const TodoApp: React.FC<Props> = (props) => {
   const data = usePreloadedQuery(
     graphql`
       query TodoAppQuery($userId: String!) {
@@ -75,8 +75,9 @@ function TodoApp(props: Props) {
     </div>
   );
 }
+TodoApp.whyDidYouRender = true;
 
-export default function TodoAppWrapper({ initialQueryRef }: Props) {
+const TodoAppWrapper: React.FC<Props> = ({ initialQueryRef }) => {
   return (
     <ErrorBoundary fallbackRender={({ error }) => <div>{error.message}</div>}>
       <React.Suspense fallback={<div>Loading</div>}>
@@ -85,3 +86,4 @@ export default function TodoAppWrapper({ initialQueryRef }: Props) {
     </ErrorBoundary>
   );
 }
+export default TodoAppWrapper

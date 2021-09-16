@@ -1,3 +1,6 @@
+/* eslint-disable import/first */
+import "./wdyr";
+
 import React from "react";
 import ReactDOM from "react-dom";
 // import "todomvc-app-css/index.css";
@@ -16,6 +19,7 @@ const initialQueryRef = loadQuery<TodoAppQuery.TodoAppQuery>(
     userId: "me"
   }
 );
+
 ReactDOM.render(
   <React.StrictMode>
     <RelayEnvironmentProvider environment={TodoAppEnvironment}>

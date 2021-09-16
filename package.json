@@ -95,7 +95,8 @@
     "test": "node scripts/test.js",
     "update-schema": "NODE_ENV=development babel-node scripts/update-schema.js",
     "relay": "relay-compiler --src ./src --schema schema/schema.graphql --language typescript --artifactDirectory ./src/__generated__",
-    "watch_relay": "npm-watch relay"
+    "watch_relay": "npm-watch relay",
+    "postinstall": "patch-package"
   },
   "watch": {
     "relay": {
@@ -178,5 +179,9 @@
       "jest-watch-typeahead/testname"
     ],
     "resetMocks": true
+  },
+  "devDependencies": {
+    "@welldone-software/why-did-you-render": "^6.2.1",
+    "patch-package": "^6.4.7"
   }
 }
